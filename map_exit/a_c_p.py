@@ -6,4 +6,4 @@ print("the odd numberes in this list are",odds)
 
 fruits=['apple','mango','banana','grapes']
 fruits_capitalized=[fruits.capitalize() for fruits in fruits]
-print("the capitaliozed foerm of ruits are :",fruits_capitalized)
+print("the capitaliozed foerm of fruits are :",fruits_capitalized)
