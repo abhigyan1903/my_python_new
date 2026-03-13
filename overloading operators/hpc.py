@@ -31,5 +31,17 @@ class IntegerToRoman:
                 num -= value
 
         return roman_numeral
-object_1 = IntegerToRoman(67676).convert()
-print("your roman numeral is :" , object_1)
+number = int(input("Enter an integer (1-3999): "))
+
+if 1 <= number <= 3999:
+
+       converter = IntegerToRoman(number)
+
+       result = converter.convert()
+
+       print("Roman Numeral:", result)
+
+else:
+
+       print("Please enter a number between 1 and 3999.")
+
