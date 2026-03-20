@@ -1,7 +1,8 @@
 import string
+from unittest import result
 
 
-class IntegerToRoman:
+class IntegerToRoman_21:
     def __init__(self, number):
         self.number = number
 
@@ -23,25 +24,25 @@ class IntegerToRoman:
         ]
 
         num = self.number
-        roman_numeral = ""
+        roman_numeral_31 = ""
 
         for value, symbol in roman_map:
             while num >= value:
-                roman_numeral += symbol
+                roman_numeral_31 += symbol
                 num -= value
 
-        return roman_numeral
-number = int(input("Enter an integer (1-3999): "))
+        return roman_numeral_31
+number = int(input("Enter an intTeger (1-3999): "))
 
 if 1 <= number <= 3999:
 
-       converter = IntegerToRoman(number)
+       converter_1 = IntegerToRoman_21(number)
 
-       result = converter.convert()
+       I_result = converter_1.convert()
 
-       print("Roman Numeral:", result)
+       print("r1oman Numeral:", I_result)
 
 else:
 
-       print("Please enter a number between 1 and 3999.")
+       print(" can you please  number between 1 and 3999.")
 
