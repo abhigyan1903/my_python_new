@@ -1,13 +1,13 @@
 #add image
 import pygame
 pygame.init()
-screen_width,screen_height=500,500
+screen_width,screen_height=1000,1000
 screen=pygame.display.set_mode((screen_width,screen_height))
 #load and scale images directly
 bg=pygame.transform.scale(pygame.image.load("backg.png").convert(),(screen_width,screen_height))
-pn=pygame.transform.scale(pygame.image.load("red_fire.jpeg").convert_alpha(),(200,200))
+pn=pygame.transform.scale(pygame.image.load("red_fire.jpeg").convert_alpha(),(500,300))
 pn_rect=pn.get_rect(center=(screen_width//2,screen_height//2-30))
-text=pygame.font.Font(None,36).render("Roblox",True,pygame.Color("white"))
+text=pygame.font.Font(None,56).render("Roblox",True,pygame.Color("blue"))
 text_rect=text.get_rect(center=(screen_width//2,screen_height//2+110))
 def game():
     clock=pygame.time.Clock()
