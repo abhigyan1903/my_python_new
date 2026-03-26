@@ -1,13 +1,10 @@
-#hello
-import pygame
-pygame.init()
-screen = pygame.display.set_mode((2500, 1300))
-pygame.display.set_caption("roblox")
-running = True
+#hello i am making a blank window
+import pygame as x
+x.init()
+x.display.set_mode((600,700))
+running=True
 while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-            pygame.quit()                    
-
-                
+    for event in x.event.get():
+        if event.type==x.QUIT:
+            running=False
+x.quit()
