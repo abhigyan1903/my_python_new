@@ -28,7 +28,7 @@ class sprite(p.sprite.Sprite):
          boundary_hit=False
          if self.rect.left<=0 or self.rect.right>=500:
              self.velocity[0]=-self.velocity[0]
-             bundary_hit=True
+             boundary_hit=True
          if self.rect.top<=0 or self.rect.bottom>=400:
              self.velocity[1]=-self.velocity[1]
              boundary_hit=True
@@ -68,5 +68,5 @@ while not exit:
     screen.fill(bg_color)
     all_sprites.draw(screen)
     p.display.flip()
-    clock.tick(250)
+    clock.tick(240)
 p.quit()
