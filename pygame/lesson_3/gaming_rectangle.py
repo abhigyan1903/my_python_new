@@ -2,7 +2,7 @@ import pygame as p
 import random
 p.init()
 screen_height,screen_width=400,500
-speed=5
+speed=40
 font_size=72
 bg_image=p.transform.scale(p.image.load("yes.jpg"),(screen_width,screen_height))
 font=p.font.SysFont("Arial",font_size)
@@ -51,4 +51,4 @@ while running:
         screen.blit(win_text,((screen_width-win_text.get_width())//2,(screen_height-win_text.get_height())//2))
     p.display.flip()
     clock.tick(90)
-p.quit()    
+p.quit()   
