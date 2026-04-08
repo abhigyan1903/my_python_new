@@ -33,7 +33,7 @@ def main():
             y+=7
         #keep inside the screen
         z=max(0,min(z,400-width))
-        y=max(0,min(y,500-height))
+        y=max(0,min( y,500-height))
         #color change on touching boundries
         if z<=0 :
             current_color=color['red']
