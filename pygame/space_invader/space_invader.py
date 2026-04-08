@@ -6,24 +6,27 @@ import math as m
 #constant
 
 Screen_width,Screen_height=800,500
-player_start_x=370
-player_start_y=380
+player_start_x=368
+player_start_y=400
 enemy_start_y_min=50
 enemy_start_y_max=150
-enemy_speed_x=4
-enemy_speed_y=40
-bullet_speed_y=10
+enemy_speed_x=0.3
+enemy_speed_y=1
+bullet_speed_y=1
 collision_distance=27
+
+
 #initialization
 p.init()
 screen=p.display.set_mode((Screen_width,Screen_height))
-bg=p.image.load("space.jpg")
+bg=p.transform.scale(p.image.load("space.jpg").convert(), (Screen_width,Screen_height))
 p.display.set_caption("Space Invader")
-icon=p.image.load("player.png")
+icon=p.transform.scale(p.image.load("player.png").convert_alpha(), (32, 32))
 p.display.set_icon(icon)
 
 #player
-player_img=p.image.load("player.png")
+player_img=p.transform.scale(p.image.load("player.png").convert_alpha(), (64, 64))
+player_rect=player_img.get_rect(center=(player_start_x, player_start_y))
 playerx=player_start_x
 playery=player_start_y
 playerx_change=0
@@ -37,14 +40,14 @@ enemyy_change=[]
 num_of_enemies=6
 
 for i in range(num_of_enemies):
-    enemy_image.append(p.image.load("enemy.png"))
+    enemy_image.append(p.transform.scale(p.image.load("enemy.png").convert_alpha(), (64, 64)))
     enemyx.append(r.randint(0,Screen_width-64))
     enemyy.append(r.randint(enemy_start_y_min,enemy_start_y_max))
     enemyx_change.append(enemy_speed_x)
     enemyy_change.append(enemy_speed_y)
     
 #bullet
-bullet_img=p.image.load("bullet.png")
+bullet_img= p.transform.scale(p.image.load("bullet.png").convert_alpha(), (32, 32))
 bulletx=0
 bullety=player_start_y
 bulletx_change=0
@@ -85,9 +88,9 @@ while running:
             running=False
         if event.type==p.KEYDOWN:
             if event.key==p.K_LEFT:
-                playerx_change=-5
+                playerx_change=-0.4
             if event.key==p.K_RIGHT:
-                playerx_change=5
+                playerx_change=0.4
             if event.key==p.K_SPACE and bullet_state=="ready":
                 bulletx=playerx
                 fire_bullet(bulletx,bullety)
@@ -97,7 +100,7 @@ while running:
     playerx=max(0,min(playerx,Screen_width-64))
     
     for i in range(num_of_enemies):
-        if enemyy[i]>340:
+        if enemyy[i]>640:
             for j in range(num_of_enemies):
                 enemyy[j]=2000
             game_over_text()

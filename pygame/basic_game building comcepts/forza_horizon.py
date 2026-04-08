@@ -1,5 +1,5 @@
 #making a forza horizon game screen
-
+#lets add sprites
 #in itializing
 import pygame as p      
 p.init()
